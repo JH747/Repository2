@@ -12,10 +12,8 @@ public class Main {
         catch (InputMismatchException e){
             e.printStackTrace();
         }
-        if(a >= 90) System.out.println("A");
-        else if(a >= 80) System.out.println("B");
-        else if(a >= 70) System.out.println("C");
-        else if(a >= 60) System.out.println("D");
-        else System.out.println("F");
+        if(a % 400 == 0) System.out.println(1);
+        else if((a % 4 == 0) && (a % 100 != 0)) System.out.println(1);
+        else System.out.println(0);
     }
 }
