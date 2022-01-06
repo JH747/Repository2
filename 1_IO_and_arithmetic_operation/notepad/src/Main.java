@@ -6,20 +6,14 @@ import java.util.StringTokenizer;
 
 public class Main {
     public static void main(String[] args){
-        Scanner sc = new Scanner(System.in);
-        StringTokenizer st1 = new StringTokenizer(sc.nextLine());
-        //sc.close();
+        Scanner sc1 = new Scanner(System.in);
+        StringTokenizer st1 = new StringTokenizer(sc1.nextLine());
+        sc1.close();
 
-        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        StringTokenizer st2 = new StringTokenizer("");
-        try{
-            st2 = new StringTokenizer(br.readLine());
-            br.close();
-        }
-        catch(IOException e){
-            e.printStackTrace();
-        }
-        
+        Scanner sc2 = new Scanner(System.in);
+        StringTokenizer st2 = new StringTokenizer(sc2.nextLine());
+        sc2.close();
+
         while(st1.hasMoreTokens()){
             System.out.println(st1.nextToken());
         }

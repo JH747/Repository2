@@ -1,6 +1,4 @@
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
+import java.io.*;
 import java.util.Scanner;
 import java.util.StringTokenizer;
 
@@ -19,12 +17,21 @@ public class Main {
         catch(IOException e){
             e.printStackTrace();
         }
+        sc.close();
 
-        while(st1.hasMoreTokens()){
-            System.out.println(st1.nextToken());
+        BufferedWriter bw =  new BufferedWriter(new OutputStreamWriter(System.out));
+        try{
+            while(st1.hasMoreTokens()){
+                System.out.println(st1.nextToken());
+            }
+            while(st2.hasMoreTokens()){
+                bw.write(st2.nextToken() + "\n");
+            }
+            bw.flush();
+            bw.close();
         }
-        while(st2.hasMoreTokens()){
-            System.out.println(st2.nextToken());
+        catch(IOException e){
+            e.printStackTrace();
         }
 
     }
