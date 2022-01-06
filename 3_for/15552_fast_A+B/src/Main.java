@@ -1,27 +1,38 @@
+import java.io.*;
 import java.util.ArrayList;
-import java.util.InputMismatchException;
 import java.util.List;
-import java.util.Scanner;
+import java.util.StringTokenizer;
 
 public class Main {
     public static void main(String[] args){
-        Scanner sc = new Scanner(System.in);
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         int n = 0;
-        List<Integer> a_list = new ArrayList<>();
-        List<Integer> b_list = new ArrayList<>();
+        List<Integer> list_a = new ArrayList<>();
+        List<Integer> list_b = new ArrayList<>();
+        StringTokenizer stk;
         try{
-            n = sc.nextInt();
+            n = Integer.parseInt(br.readLine());
             for(int i = 0; i < n; i++){
-                a_list.add(sc.nextInt());
-                b_list.add(sc.nextInt());
+                stk = new StringTokenizer(br.readLine());
+                list_a.add(Integer.parseInt(stk.nextToken()));
+                list_b.add(Integer.parseInt(stk.nextToken()));
             }
-            sc.close();
+            br.close();
         }
-        catch (InputMismatchException e){
+        catch(IOException e){
             e.printStackTrace();
         }
-        for(int i = 0; i < n; i++){
-            System.out.println(a_list.get(i)+b_list.get(i));
+
+        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+        try{
+            for(int i = 0; i < n; i++){
+                bw.write(list_a.get(i) + list_b.get(i) + "\n");
+            }
+            bw.flush();
+            bw.close();
+        }
+        catch(IOException e){
+            e.printStackTrace();
         }
     }
 }
