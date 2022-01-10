@@ -3,18 +3,12 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        int[] arr = new int[10];
-        for(int i = 1; i < 10; i++){
-            arr[i] = sc.nextInt();
+        int n = Integer.parseInt(sc.nextLine());
+        String str = sc.nextLine();
+        int sum = 0;
+        for(int i = 0; i < n; i++){
+            sum += Integer.parseInt(Character.toString(str.charAt(i)));
         }
-        int max = 0;
-        int cnt = -1;
-        for(int i = 1; i < 10; i++){
-            if(max < arr[i]){
-                max = arr[i];
-                cnt = i;
-            }
-        }
-        System.out.println(max + "\n" + cnt);
+        System.out.println(sum);
     }
 }
