@@ -10,12 +10,19 @@ public class Main {
         BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
         StringTokenizer stk = new StringTokenizer(br.readLine());
         br.close();
-        int cnt = 0;
-        while(stk.hasMoreTokens()){
-            stk.nextToken();
-            cnt++;
-        }
-        bw.write(Integer.toString(cnt));
+        char[] n1 = stk.nextToken().toCharArray();
+        char[] n2 = stk.nextToken().toCharArray();
+        char tmp = n1[0];
+        n1[0] = n1[2];
+        n1[2] = tmp;
+        tmp = n2[0];
+        n2[0] = n2[2];
+        n2[2] = tmp;
+        int n11 = Integer.parseInt(String.valueOf(n1));
+        int n22 = Integer.parseInt(String.valueOf(n2));
+
+        if(n11 > n22) bw.write(Integer.toString(n11));
+        else bw.write(Integer.toString(n22));
         bw.flush();
         bw.close();
     }
