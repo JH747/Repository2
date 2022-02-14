@@ -1,0 +1,7 @@
+BufferedReader br = new BufferedReader(new FileReader("D:\\oh\\programming\\python_JAVA_multi\\material_files\\multi_confirm.txt"));
+
+        String str;
+        while((str = br.readLine()) != null){
+            System.out.println(str);
+        }
+        br.close();
